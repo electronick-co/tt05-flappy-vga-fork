@@ -5,7 +5,7 @@ module gameControl (
 	output reg [7:0] score
 );
 	reg [8:0] bird_vert_velocity;
-	reg [7:0] next_hole_pos;
+	reg [8:0] next_hole_pos;
 	reg has_flapped;
 	reg game_over;
 	reg restart_game;
@@ -17,18 +17,18 @@ module gameControl (
 	begin
 		if(!reset || v_sync)
 		begin
-			has_updated_during_current_v_sync = 1'b0;
-			update_pulse = 1'b0;
+			has_updated_during_current_v_sync <= 1'b0;
+			update_pulse <= 1'b0;
 		end
 		else if (has_updated_during_current_v_sync == 1'b0)
 		begin
-			has_updated_during_current_v_sync = 1'b1;
-			update_pulse = 1'b1;
+			has_updated_during_current_v_sync <= 1'b1;
+			update_pulse <= 1'b1;
 		end
 		else
 		begin
-			has_updated_during_current_v_sync = 1'b1;
-			update_pulse = 1'b0;
+			has_updated_during_current_v_sync <= 1'b1;
+			update_pulse <= 1'b0;
 		end
 	end
 	

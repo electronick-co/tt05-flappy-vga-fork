@@ -10,8 +10,8 @@ module vgaControl (
 	begin
 		if(~reset)
 		begin
-			h_count = 10'b0;
-			v_count = 10'b0;
+			h_count <= 10'b0;
+			v_count <= 10'b0;
 		end
 		else
 		begin
@@ -55,9 +55,9 @@ module vgaControl (
 			
 			// set bright if in display window
 			if(h_count < 640 && v_count < 480)
-				bright = 1;
+				bright <= 1;
 			else
-				bright = 0;
+				bright <= 0;
 		end
 	end
 
