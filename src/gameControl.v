@@ -5,7 +5,7 @@ module gameControl (
 	output reg [7:0] score
 );
 	reg [8:0] bird_vert_velocity;
-	reg [8:0] next_hole_pos;
+	reg [7:0] next_hole_pos;
 	reg has_flapped;
 	reg game_over;
 	reg restart_game;
@@ -69,7 +69,7 @@ module gameControl (
 				if(pipe_pos == 10'd0)
 				begin
 					pipe_pos <= 10'd740;
-					hole_pos <= {1'b0, next_hole_pos} + 8'd37;
+					hole_pos <= {1'b0, next_hole_pos} + 9'd37;
 					score <= score + 8'd1;
 				end
 				else
@@ -77,7 +77,7 @@ module gameControl (
 					pipe_pos <= pipe_pos - 10'd4;
 				end
 				
-				if(bird_pos > 9'd480 || (pipe_pos < 10'd200 && pipe_pos > 10'd50 && !(bird_pos > hole_pos + 50 && bird_pos < hole_pos + 10'd150)))
+				if(bird_pos > 9'd480 || (pipe_pos < 10'd200 && pipe_pos > 10'd50 && !(bird_pos > hole_pos + 9'd50 && bird_pos < hole_pos + 9'd150)))
 					game_over <= 1'b1;
 			end
 			else if(!button && !has_flapped)

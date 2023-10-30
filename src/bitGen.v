@@ -29,14 +29,14 @@ module bitGen (
 	begin
 		if(bright)
 		begin
-			if(h_count > 10'd50 && h_count < 10'd100 && v_count < bird_pos && (v_count > bird_pos - 9'd50 || bird_pos < 9'd50))
+			if(h_count > 10'd50 && h_count < 10'd100 && v_count < {1'b0, bird_pos} && (v_count > {1'b0, bird_pos - 9'd50} || bird_pos < 9'd50))
 			begin
 				// yellow (for the bird)
 				next_red = 1'b1;
 				next_green = 1'b1;
 				next_blue = 1'b0;
 			end
-			else if(h_count < pipe_pos && (h_count > pipe_pos - 10'd100 || pipe_pos < 10'd100) && (v_count < hole_pos || v_count > hole_pos + 9'd150))
+			else if(h_count < pipe_pos && (h_count > pipe_pos - 10'd100 || pipe_pos < 10'd100) && (v_count < {1'b0, hole_pos} || v_count > {1'b0, hole_pos + 9'd150}))
 			begin
 				// green (for the pipe)
 				next_red = 1'b0;
