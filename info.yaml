@@ -34,11 +34,11 @@ documentation:
 
 # Instructions on how someone could test your project, include things like what buttons do what and how to set the clock if needed
   how_to_test:  |
-      The clock input should be set to 25MHz (or 25.179MHz, either should be close enough). ui_in[0] should be connected to a debounced button that goes low when pressed. The VGA output is compatible with the Tiny VGA PMOD (https://tinytapeout.com/specs/pinouts/). Once everything is connected, a reset may need to be triggered before normal operation. An image with a yellow square, green pillars, and blue background should appear. Pressing the button should cause the bird to flap and start moving towards the pipes. The goal is to go through the gap in the pipes. Your score will count up each time you successfully make it through a pipe.
+      The clock input should be set to 25MHz (or 25.179MHz, either should be close enough). ui_in[0] should be connected to a debounced button that goes low when pressed. The VGA output is compatible with the Tiny VGA PMOD (https://tinytapeout.com/specs/pinouts/). Once everything is connected, a reset may need to be triggered before normal operation. An image with a yellow square, green pillars, and blue background should appear. Pressing the button should cause the bird to flap and start moving towards the pipes. The goal is to go through the gap in the pipes. Your score will count up in binary on the bidirectional pins each time you successfully make it through a pipe.
 
 # A description of what the inputs do (e.g. red button, SPI CLK, SPI MOSI, etc).
   inputs:               
-    - Game Control Button (Should be debounced and go low when pressed)
+    - Button
     - none
     - none
     - none
