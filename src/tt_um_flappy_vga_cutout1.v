@@ -20,7 +20,7 @@ module tt_um_flappy_vga_cutout1 (
 	wire red, green, blue;
 	wire h_sync, v_sync;
 	wire game_button;
-	wire bright; // can probably remove
+	wire bright;
 	
 	assign uio_oe = 8'b11111111;
 	assign uio_out = score;
